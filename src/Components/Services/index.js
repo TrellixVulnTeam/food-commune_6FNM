@@ -8,7 +8,7 @@ ServicesH1,ServicesCard,ServicesWrapper,ServicesIcon,ServicesH2,ServicesP} from 
 
 const Services = () => {
     return (
-        <ServicesContainer id="services">
+        <ServicesContainer id="restaurants">
             <ServicesH1>Sample Restaurants</ServicesH1>
             <ServicesWrapper>
                 <ServicesCard>

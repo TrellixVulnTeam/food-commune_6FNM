@@ -23,12 +23,12 @@ export const homeObjOne ={
 };
 
 export const homeObjTwo ={
-    id: 'restaurants',
+    id: 'community',
     lightBg:true,
     lightText:false,
     lightTextDesc: false,
     topLine: 'Discover Communities',
-    headline: 'TakeOut from favourite local restaurants',
+    headline: 'TakeOut from favourite local Communities',
     description: 'Enjoy Fresh Air, go ahead and get takeout from your favourite restaurant',
     buttonLabel: 'Learn More',
     imgStart: true,

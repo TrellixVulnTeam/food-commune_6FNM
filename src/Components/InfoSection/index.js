@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { Button } from '../ButtonElement' ;
 import { Column2,InfoContainer,
     
@@ -18,16 +19,16 @@ const InfoSection = ({lightBg,id,imgStart,topLine,lightText,headline,darkText,de
                             <Heading lightText={lightText}>{headline}</Heading>
                             <Subtitile darkText={darkText} >{description}</Subtitile>
                             <BtnWrap>
-                                <Button to= 'home'
-                                smooth={true}
+                                <Link to="/signin"
+                              
                                 duration={500}
-                                spy={true}
+                                
                                 exact="true"
                                 offset={-40}
                                 primary={primary ? 1 : 0 }
                                 dark={dark ? 1 :0 }
                                 
-                                >{buttonLabel}</Button>
+                                >{buttonLabel}</Link>
                             </BtnWrap>
                       </TextWrapper>
                       

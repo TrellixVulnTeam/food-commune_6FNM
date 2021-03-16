@@ -10,11 +10,13 @@ import {
 import { Marginer } from "../Marginer";
 import { AccountContext } from "./AccountContext";
 import axios from 'axios';
+import { useHistory} from 'react-router-dom';
 export function LoginForm(props) {
   const { switchToSignup } = useContext(AccountContext);
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
   const [keeplogin,setKeeplogin]=useState(false);
+  const history= useHistory();
   const api=axios.create({
     baseURL:'http://localhost:3000/api'
   })
@@ -46,6 +48,8 @@ export function LoginForm(props) {
           localStorage.setItem('token',res.data.token);
 
           alert("Login sucessfully");
+          // window.location.href = "http://localhost:3001/";
+          history.push('/');
 
          }
          else

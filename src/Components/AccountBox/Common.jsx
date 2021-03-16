@@ -24,7 +24,7 @@ export const MutedLink = styled.a`
 
 export const BoldLink = styled.a`
   font-size: 11px;
-  color: #5c00d2;
+  color: #01bf71;
   font-weight: 500;
   text-decoration: none;
   margin: 0 4px;
@@ -47,7 +47,7 @@ export const Input = styled.input`
   }
   &:focus {
     outline: none;
-    border-bottom: 2px solid #5c00d2;
+    border-bottom: 2px solid #01bf71;
   }
 `;
 
@@ -61,8 +61,8 @@ export const SubmitButton = styled.button`
   border-radius: 100px 100px 100px 100px;
   cursor: pointer;
   transition: all, 240ms ease-in-out;
-  background: #5c00d2;
-  background: #5c00d2;
+  background:#01bf71;
+  background: #01bf71;
   &:hover {
     filter: brightness(1.03);
   }

@@ -23,7 +23,7 @@ const onHover =()=>{
                        Pick up food from your nearby restaurants
                     </HeroP>
                 <HeroBtnWrapper>
-                    <Button to='signup' onMouseEnter={onHover} onMouseLeave= {onHover}>
+                    <Button to='/signin' onMouseEnter={onHover} onMouseLeave= {onHover}>
                         Sign In {hover ? <ArrowForward /> : <ArrowRight/>}
                     </Button>
                 </HeroBtnWrapper>

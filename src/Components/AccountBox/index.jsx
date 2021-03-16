@@ -38,7 +38,7 @@ const BackDrop = styled(motion.div)`
   transform: rotate(60deg);
   top: -290px;
   left: -70px;
-  background: #5c00d2;
+  background: #01bf71;
 `;
 
 const HeaderContainer = styled.div`
