@@ -1,4 +1,4 @@
-import React, {useState,Component,History} from 'react';
+import React, {useState,Component,useEffect} from 'react';
 import {FaBars} from 'react-icons/fa'
 import { Link,useHistory } from 'react-router-dom';
 import {Nav,NavbarContainer
@@ -72,7 +72,7 @@ export default class Navbar extends Component {
 
     render() {
         
-        if(!localStorage.getItem('token')){
+        if(localStorage.getItem('token')){
             
             return(
                 <NavBarSignIn />

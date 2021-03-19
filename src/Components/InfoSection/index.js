@@ -19,7 +19,7 @@ const InfoSection = ({lightBg,id,imgStart,topLine,lightText,headline,darkText,de
                             <Heading lightText={lightText}>{headline}</Heading>
                             <Subtitile darkText={darkText} >{description}</Subtitile>
                             <BtnWrap>
-                                <Link to="/signin"
+                                <Button to="/restuarant"
                               
                                 duration={500}
                                 
@@ -28,7 +28,7 @@ const InfoSection = ({lightBg,id,imgStart,topLine,lightText,headline,darkText,de
                                 primary={primary ? 1 : 0 }
                                 dark={dark ? 1 :0 }
                                 
-                                >{buttonLabel}</Link>
+                                >{buttonLabel}</Button>
                             </BtnWrap>
                       </TextWrapper>
                       

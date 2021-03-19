@@ -1,6 +1,7 @@
 import takeoutpic from '../../Images/takeout.jpg'
 import communitypic from  '../../Images/community.jpg'
 import localpic from  '../../Images/local.jpg'
+import restaurant from '../../Images/mexicanR.jpg'
 
 
 
@@ -55,4 +56,22 @@ export const homeObjThree ={
     dark:false,
     primary:false,
     darkText:true,
+};
+
+export const homeObjRestuarantDemo ={
+    id: "Sample Restuarant",
+    lightBg:false,
+    lightText:true,
+    lightTextDesc: true,
+    topLine: 'Tacos. Burritos. Nachos',
+    headline: 'Taste of Mexico',
+    description: 'This is the description of the restuarant',
+    buttonLabel: 'How far from me?',
+    imgStart: true,
+    img: restaurant,
+    alt:'food',
+    alt:'food',
+    dark:true,
+    primary:true,
+    darkText:false,
 };
