@@ -8,6 +8,8 @@ const ctrlMain=require("../controllers/main");
 /* GET home page. */
 router.post('/login', ctrlLogin.login);
 router.post('/register', ctrlMain.register);
+router.get('/restaurant_list', ctrlMain.get_restaurant_list);
+
 // // function verifyToken(req,res,next)
 // // {
 // //     const bearerheader=req.headers['authorization'];

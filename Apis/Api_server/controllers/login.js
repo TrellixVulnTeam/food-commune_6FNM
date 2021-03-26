@@ -9,7 +9,7 @@ const saltRounds = 10;
 const login =  function(req,res,next)
 {
     
-    users.findOne({Email:req.body.username})
+    users.findOne({Email:req.body.userName})
     .exec(function(err, UserData) {
     if (!UserData) {
         res 

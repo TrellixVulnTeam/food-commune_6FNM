@@ -1,14 +1,12 @@
 
 const mongoose = require('mongoose');
 const Users = mongoose.model('users');
+const restaurant_list = mongoose.model('restaurant_list');
 const bcrypt=require('bcrypt');
 const jwt=require('jsonwebtoken');
 
 
-const register=function(req,res){
-   
-   
-    
+const register=function(req,res){    
     Users.findOne({Email:req.body.email})
     .exec(function(err, UserData) {
     if (!UserData) {
@@ -34,7 +32,27 @@ const register=function(req,res){
    
 
 };
+
+const get_restaurant_list=function(req,res)
+{
+    restaurant_list.find().exec(
+        function(err,Data){
+            if(err){
+                res
+                .status(404)
+                .json(err)
+                return;
+            }
+            else{
+                  
+                res.status(200).json({'data':Data});
+
+            }
+
+        }
+    );
+}
 module.exports=
 {
-    register
+    register,get_restaurant_list
 };

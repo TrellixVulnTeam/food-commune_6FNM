@@ -100,7 +100,7 @@ const NavBarSignIn= ({toggle})=>{
                             <NavLinks to="about"> About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="restaurants">Restaurants </NavLinks>
+                            <NavLinks to="/restaurant">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="community"> Community</NavLinks>
@@ -136,7 +136,7 @@ const NavBarSignOut= ({toggle})=>{
                             <NavLinks to="about"> About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="restaurants">Restaurants </NavLinks>
+                            <NavLinks to="/restuarant">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="community"> Community</NavLinks>

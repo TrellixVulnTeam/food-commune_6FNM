@@ -76,7 +76,7 @@ height:80px;
 margin-top:60px;
 `;
 
-export const NavLinks =styled(LinkScroll)`
+export const NavLinks =styled(LinkR)`
 color:#fff;
 display:flex;
 align-items:center;

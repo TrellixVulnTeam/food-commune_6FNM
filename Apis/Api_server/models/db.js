@@ -13,3 +13,4 @@ mongoose.connection.on('disconnected',function(){
 });
 
 require('./users');
+require('./restaurant_list');
