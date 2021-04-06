@@ -50,7 +50,7 @@ export function LoginForm(props) {
           alert("Login sucessfully");
           // window.location.href = "http://localhost:3001/";
           history.push('/');
-
+          
          }
          else
          {

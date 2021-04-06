@@ -62,24 +62,21 @@ export default class Navbar extends Component {
     state={};
   
     componentDidMount(){
-            if(localStorage.getItem('token')){
-                console.log("success");
-            }
-            else{
-                console.log("token not found")
-            }
+           
     }
 
     render() {
         
         if(localStorage.getItem('token')){
             
+            
             return(
+               
                 <NavBarSignIn />
             )
         }else{
             return(
-<NavBarSignOut></NavBarSignOut>
+<NavBarSignOut />
             )
             
         }
@@ -105,9 +102,7 @@ const NavBarSignIn= ({toggle})=>{
                         <NavItem>
                             <NavLinks to="community"> Community</NavLinks>
                         </NavItem>
-                        <NavItem>
-                            <NavLinks to="Sign Up"> Sign up</NavLinks>
-                        </NavItem>
+                       
                     </NavMenu>
                              
                   <NavBtn>
