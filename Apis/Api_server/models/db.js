@@ -14,3 +14,6 @@ mongoose.connection.on('disconnected',function(){
 
 require('./users');
 require('./restaurant_list');
+require('./restaurant_cat');
+require('./items');
+
