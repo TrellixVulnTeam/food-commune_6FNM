@@ -4,7 +4,7 @@ import InfoSection from '../Components/InfoSection'
 import Navbar from '../Components/Navbar'
 import {homeObjRestuarantDemo} from '../Components/InfoSection/Data'
 import Sidebar from '../Components/Sidebar'
-import RestuarantDescComponents from '../Components/RestaurantDescComponents'
+
 import Products from '../Components/Products'
 import { productData } from '../Components/Products/data'
 
