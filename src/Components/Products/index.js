@@ -1,26 +1,32 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {ProductsContainer,ProductsHeading,ProductWrapper,ProductCard,ProductImg,ProductInfo,
 ProductTitle,ProductDesc,ProductPrice,ProductButton} from './ProductElements';
 
+
+
 const Products = ({heading,data}) => {
-    return (
+    
+    useEffect(()=>{
+        console.log(data.dat);
+        
+     },[]);    return (
        <ProductsContainer>
-           <ProductsHeading>{heading}</ProductsHeading>
-           <ProductWrapper>
+           {data.res && <ProductsHeading>{data.res.res_name}</ProductsHeading>}
+           {/* <ProductWrapper>
                {data.map((product,index) => {
                    return(
                        <ProductCard key={index}>
-                             <ProductImg src={product.img} alt={product.alt} />
+                             <ProductImg src={product.price} alt={product.price} />
                        <ProductInfo>
-                       <ProductTitle>{product.title}</ProductTitle>
-                       <ProductDesc>{product.desc}</ProductDesc>
+                       <ProductTitle>{product.price}</ProductTitle>
+                       <ProductDesc>{product.price}</ProductDesc>
                        <ProductPrice>{product.price}</ProductPrice>
-                       <ProductButton>{product.button}</ProductButton>
+                       <ProductButton>{product.price}</ProductButton>
                        </ProductInfo>
                        </ProductCard>
                    )
                })}
-           </ProductWrapper>
+           </ProductWrapper> */}
        </ProductsContainer>
     )
 }

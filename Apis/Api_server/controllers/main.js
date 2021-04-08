@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const Users = mongoose.model('users');
 const restaurant_list = mongoose.model('restaurant_list');
 const restaurant_cat = mongoose.model('restaurant_cat');
-
+const items=mongoose.model('items');
 // const bcrypt=require('bcrypt');
 // const jwt=require('jsonwebtoken');
 
@@ -36,9 +36,8 @@ const register=function(req,res){
 };
 const get_restaurant=function(req,res)
 {
-    // return req.params.res_id;
 
-    restaurant_cat.find().exec(
+    items.findOne({res_id:req.params.res_id}).populate('cat_id').exec(
         function(err,Data){
             if(err){
                 res
@@ -48,9 +47,25 @@ const get_restaurant=function(req,res)
             }
             else{
                   
-                res.status(200).json({'data':Data});
+                restaurant_list.findById(req.params.res_id).exec(
+                    function(err,resData){
+                        if(err){
+                            res
+                            .status(404)
+                            .json(err)
+                            return;
+                        }
+                        else{
+                              
 
-            }
+                            res.status(200).json({'dat':Data,'res':resData});
+
+            
+                        }
+            
+
+            });
+        }
 
         }
     );
