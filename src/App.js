@@ -20,6 +20,8 @@ function App() {
         <Route path="/restuarant" component={RestuarantDescription} exact></Route>
         <Route path="/list" component={RestaurantListPage} exact></Route>
         <Route path="/cart" component={AddToCart} exact></Route>
+        <Route path="/restaurant/:id" component={RestuarantDescription} exact></Route>
+
       </Switch>
 
     </Router>

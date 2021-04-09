@@ -9,6 +9,8 @@ const ctrlMain=require("../controllers/main");
 router.post('/login', ctrlLogin.login);
 router.post('/register', ctrlMain.register);
 router.get('/restaurant_list', ctrlMain.get_restaurant_list);
+router.get('/get_restaurant/:res_id', ctrlMain.get_restaurant);
+
 
 // // function verifyToken(req,res,next)
 // // {
@@ -34,7 +36,7 @@ router.get('/restaurant_list', ctrlMain.get_restaurant_list);
 // //     }else
 // //     {
 // //         res.sendStatus(403);
-// //     }
+// //     } 
        
      
 // }

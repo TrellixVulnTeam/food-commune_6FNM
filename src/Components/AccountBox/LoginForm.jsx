@@ -32,22 +32,18 @@ export function LoginForm(props) {
       alert('please add password');
 
      }
-     else if (keeplogin==true)
-     {
-      alert('please add password');
-
-     }
+    
      else
      {
       api.post('/login',{userName:email,password:password}).then(res=>{
         console.log(res.data);
          if(res.data.data!=null)
          {
-          console.log(res.data.token);
+          //console.log(res.data.token);
          
           localStorage.setItem('token',res.data.token);
 
-          alert("Login sucessfully");
+         // alert("Login sucessfully");
           // window.location.href = "http://localhost:3001/";
           history.push('/');
           

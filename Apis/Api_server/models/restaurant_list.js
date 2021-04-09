@@ -1,6 +1,6 @@
 
 var mongoose = require('mongoose');
-var restaurant_list= new mongoose.Schema({
+var restaurant_listSchema= new mongoose.Schema({
     rse_name: {
             type: String,
             required: true,
@@ -34,5 +34,5 @@ var restaurant_list= new mongoose.Schema({
        
       
     });
-    mongoose.model('restaurant_list', restaurant_list, 'restaurant_list');
+    mongoose.model('restaurant_list', restaurant_listSchema, 'restaurant_list');
     
