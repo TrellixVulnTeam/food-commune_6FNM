@@ -11,23 +11,31 @@ const Products = ({heading,res,id}) => {
         axios.get(`http://localhost:3000/api/get_restaurant/${id}`)
        .then(response => {
         setresult(response.data);
-         console.log(response.data)
+        //  console.log(response.data)
        })
      },[]);  
+     const [cart,setcart]=useState([]);
+
      const addtocart=(product)=>
      {
-         if(localStorage.getItem('cart')===undefined)
+         if(JSON.parse(localStorage.getItem('cart'))=='' || localStorage.getItem('cart')==null )
          {
-            setcart(JSON.parse(localStorage.getItem('cart')));
-            
+            console.log('im in');
+            cart.push(product);
+            localStorage.setItem("cart", JSON.stringify(cart));
+            console.log(cart);
+     
          }
          else
          {
-             const [cart,setcart]=useState([]);
-             localStorage.setItem("test", JSON.stringify(items));
+            setcart(JSON.parse(localStorage.getItem('cart')));
+            cart.map((item)=>{item._id==product._id?alert('already in cart'):cart.push(product)});
+            
+            localStorage.setItem("cart", JSON.stringify(cart));
+            console.log(JSON.parse(localStorage.getItem('cart')));
+
 
          }
-        console.log(product);
      }
        return (
        <ProductsContainer>
