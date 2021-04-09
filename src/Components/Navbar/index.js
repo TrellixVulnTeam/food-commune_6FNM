@@ -67,7 +67,7 @@ export default class Navbar extends Component {
 
     render() {
         
-        if(localStorage.getItem('token')){
+        if(localStorage.getItem('token')!=''){
             
             
             return(
@@ -97,7 +97,7 @@ const NavBarSignIn= ({toggle})=>{
                             <NavLinks to="about"> About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="/restaurant">Restaurants </NavLinks>
+                            <NavLinks to="/list">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="community"> Community</NavLinks>
@@ -131,7 +131,7 @@ const NavBarSignOut= ({toggle})=>{
                             <NavLinks to="about"> About</NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="/restuarant">Restaurants </NavLinks>
+                            <NavLinks to="/list">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
                             <NavLinks to="community"> Community</NavLinks>

@@ -1,33 +1,34 @@
-import React, { useState ,useEffect} from 'react'
+import React, { useState ,useEffect,lazy,Suspense} from 'react'
 import Footer from '../Components/Footer'
 import InfoSection from '../Components/InfoSection'
 import Navbar from '../Components/Navbar'
 import {homeObjRestuarantDemo} from '../Components/InfoSection/Data'
 import Sidebar from '../Components/Sidebar'
+import axios from "axios"
+
 import {
    
     useParams
   } from "react-router-dom";
-import Products from '../Components/Products'
-import { productData } from '../Components/Products/data'
-import axios from "axios"
+// import Products from '../Components/Products'
+const Products =lazy(()=>import ('../Components/Products'))
 
-export const RestuarantDescription = (props) => {
+// import { Suspense } from 'react-is'
 
-    console.log(props);
+export const RestuarantDescription = () => {
+
     const [isOpen,setIsOpen] = useState(false)
     let { id } = useParams();
 
     const [restot,setRest]=useState([]);
     useEffect(()=>{
-       axios.get(`http://localhost:3000/api/get_restaurant/${id}`)
+       axios.get(`http://localhost:3000/api/get_single_res/${id}`)
        .then(response => {
            setRest(response.data);
+           console.log(response.data);
        })
-
-       
-    },[restot]);
-
+    },[]);
+    
     const toggle= () => {
         setIsOpen(!isOpen)
         
@@ -38,7 +39,9 @@ export const RestuarantDescription = (props) => {
           <Sidebar isOpen= {isOpen} toggle={toggle}/>
           <Navbar toggle={toggle} />  
           <InfoSection {...homeObjRestuarantDemo} />
-        <Products heading= 'Menu' data= {restot}></Products>
+          <Suspense fallback={<div>Loading...</div>}> 
+                 <Products heading= 'Menu' res={restot}  id={id}></Products>
+          </Suspense>
         <Footer></Footer>
 
         </>

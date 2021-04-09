@@ -47,7 +47,32 @@ const get_restaurant=function(req,res)
             }
             else{
                   
-                restaurant_list.findById(req.params.res_id).exec(
+                // restaurant_list.findById(req.params.res_id).exec(
+                //     function(err,resData){
+                //         if(err){
+                //             res
+                //             .status(404)
+                //             .json(err)
+                //             return;
+                //         }
+                //         else{
+                              
+
+                            res.status(200).json(Data);
+
+            
+            //             }
+            
+
+            // });
+        }
+
+        }
+    );
+}
+const get_single_res=function(req,res)
+{
+  restaurant_list.findById(req.params.res_id).exec(
                     function(err,resData){
                         if(err){
                             res
@@ -58,17 +83,13 @@ const get_restaurant=function(req,res)
                         else{
                               
 
-                            res.status(200).json({'dat':Data,'res':resData});
+                    res.status(200).json(resData);
 
             
-                        }
-            
-
-            });
-        }
-
-        }
-    );
+                                }
+                    
+        
+                    });
 }
 const get_restaurant_list=function(req,res)
 {
@@ -91,5 +112,5 @@ const get_restaurant_list=function(req,res)
 }
 module.exports=
 {
-    register,get_restaurant_list,get_restaurant
+    register,get_restaurant_list,get_restaurant,get_single_res
 };

@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react'
+import React, { useEffect,useState } from 'react'
 import {ProductsContainer,ProductsHeading,ProductWrapper,ProductCard,ProductImg,ProductInfo,
 ProductTitle,ProductDesc,ProductPrice,ProductButton} from './ProductElements';
 
+import axios from 'axios'
 
-
-const Products = ({heading,data}) => {
-    
+const Products = ({heading,res,id}) => {
+    const [result,setresult]=useState([]);
     useEffect(()=>{
-        console.log(data.dat);
-        
+        axios.get(`http://localhost:3000/api/get_restaurant/${id}`)
+       .then(response => {
+        setresult(response.data);
+         console.log(response.data)
+       })
      },[]);    return (
        <ProductsContainer>
-           {data.res && <ProductsHeading>{data.res.res_name}</ProductsHeading>}
+           {<ProductsHeading>{res.res_name}</ProductsHeading>}
            {/* <ProductWrapper>
                {data.map((product,index) => {
                    return(
