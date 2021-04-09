@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react'
 import {ProductsContainer,ProductsHeading,ProductWrapper,ProductCard,ProductImg,ProductInfo,
 ProductTitle,ProductDesc,ProductPrice,ProductButton} from './ProductElements';
+import product3 from '../../Images/tacos.jpg'
 
 import axios from 'axios'
 
@@ -12,24 +13,40 @@ const Products = ({heading,res,id}) => {
         setresult(response.data);
          console.log(response.data)
        })
-     },[]);    return (
+     },[]);  
+     const addtocart=(product)=>
+     {
+         if(localStorage.getItem('cart')===undefined)
+         {
+            setcart(JSON.parse(localStorage.getItem('cart')));
+            
+         }
+         else
+         {
+             const [cart,setcart]=useState([]);
+             localStorage.setItem("test", JSON.stringify(items));
+
+         }
+        console.log(product);
+     }
+       return (
        <ProductsContainer>
            {<ProductsHeading>{res.res_name}</ProductsHeading>}
-           {/* <ProductWrapper>
-               {data.map((product,index) => {
+           <ProductWrapper>
+               {result.map((product) => {
                    return(
-                       <ProductCard key={index}>
-                             <ProductImg src={product.price} alt={product.price} />
+                       <ProductCard key={product._id}>
+                             <ProductImg src={product3} alt={product.price} />
                        <ProductInfo>
-                       <ProductTitle>{product.price}</ProductTitle>
-                       <ProductDesc>{product.price}</ProductDesc>
+                       <ProductTitle>{product.item_name}</ProductTitle>
+                       {/* <ProductDesc>{product.description}</ProductDesc> */}
                        <ProductPrice>{product.price}</ProductPrice>
-                       <ProductButton>{product.price}</ProductButton>
+                       <ProductButton onClick={()=>addtocart(product)}>{'Add to cart'}</ProductButton>
                        </ProductInfo>
                        </ProductCard>
                    )
                })}
-           </ProductWrapper> */}
+           </ProductWrapper>
        </ProductsContainer>
     )
 }

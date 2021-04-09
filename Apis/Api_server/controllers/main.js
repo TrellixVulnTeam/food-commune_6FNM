@@ -37,7 +37,7 @@ const register=function(req,res){
 const get_restaurant=function(req,res)
 {
 
-    items.findOne({res_id:req.params.res_id}).populate('cat_id').exec(
+    items.find({res_id:req.params.res_id}).populate('cat_id').exec(
         function(err,Data){
             if(err){
                 res

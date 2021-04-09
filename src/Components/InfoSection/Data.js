@@ -58,7 +58,7 @@ export const homeObjThree ={
     darkText:true,
 };
 
-export const homeObjRestuarantDemo ={
+export const homeObjRestuarantDemo={
     id: "Sample Restuarant",
     lightBg:false,
     lightText:true,
