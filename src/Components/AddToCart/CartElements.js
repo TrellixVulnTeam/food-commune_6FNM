@@ -13,7 +13,7 @@ justify-items:space-evenly;
 background-color:black;
 color:white;
 align-items:center;
-
+margin:0;
 `
 
 
