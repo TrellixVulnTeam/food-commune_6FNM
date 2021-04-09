@@ -5,6 +5,9 @@ const users = mongoose.model('users');
 const jwt=require('jsonwebtoken');
 const token = '';
 const saltRounds = 10;
+// const jwt=require('jsonwebtoken');
+// const token = '';
+// const saltRounds = 10;
 
 const login =  function(req,res,next)
 {
