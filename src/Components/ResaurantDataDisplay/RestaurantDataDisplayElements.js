@@ -5,13 +5,13 @@ color:#fff;
 background: black;
 
 @media screen and (max-width: 768px){
-    padding: 100px 0;
+    padding-top: 50px;
 }`
 
 export const InfoWrapper = styled.div`
 display:grid;
 z-index:1;
-height:860px;
+height:600px;
 width:100%;
 max-width:1100px;
 margin-right:auto;
@@ -32,22 +32,22 @@ grid-template-areas: 'col2 col1';
 `
 
 export const Column1 = styled.div`
-margin-bottom:15px;
-padding:0 15px;
+margin-bottom:5px;
+padding:0 10px;
 grid-area:col1;
 
 `
 
 export const Column2 = styled.div`
-margin-bottom:15px;
-padding:0 15px;
+margin-bottom:5px;
+padding:0 10px;
 grid-area:col2;
 
 `
 export const TextWrapper =styled.div`
 max-width:540px;
 padding-top:0;
-padding-bottom: 60px;
+padding-bottom: 10px;
 
 `
 
@@ -96,6 +96,6 @@ height: 100%;
 export const Img = styled.img`
 width:100%;
 margin: 0 0 10px 0;
-padding-right:0;
+padding-right:1rem;
 
 `
