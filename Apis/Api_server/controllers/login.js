@@ -1,10 +1,9 @@
 
 const mongoose = require('mongoose');
 const users = mongoose.model('users');
-const bcrypt=require('bcrypt');
-const jwt=require('jsonwebtoken');
-const token = '';
-const saltRounds = 10;
+// const jwt=require('jsonwebtoken');
+// const token = '';
+// const saltRounds = 10;
 
 const login =  function(req,res,next)
 {

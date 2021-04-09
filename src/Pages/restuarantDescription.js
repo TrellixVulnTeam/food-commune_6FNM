@@ -38,18 +38,12 @@ export const RestuarantDescription = () => {
     return (
         <>
           <Sidebar isOpen= {isOpen} toggle={toggle}/>
-          <Navbar toggle={toggle} />  
-<<<<<<< HEAD
-          <Suspense fallback={<div>Loading...</div>}> 
-          <InfoSection  {...homeObjRestuarantDemo  } />
-          
-=======
-         
+         <Navbar toggle={toggle} /> 
           <Suspense fallback={<div>Loading...</div>}> 
           <RestaurantDataDisplay res={restot} ></RestaurantDataDisplay>
->>>>>>> 04e3075e217a0172b2956849cd6422d854ba71af
                  <Products heading= 'Menu' res={restot}  id={id}></Products>
           </Suspense>
+
         <Footer></Footer>
 
         </>
