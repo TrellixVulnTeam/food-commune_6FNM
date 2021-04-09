@@ -1,8 +1,8 @@
 import React, { useState ,useEffect,lazy,Suspense} from 'react'
 import Footer from '../Components/Footer'
-import InfoSection from '../Components/InfoSection'
+
 import Navbar from '../Components/Navbar'
-import {homeObjRestuarantDemo} from '../Components/InfoSection/Data'
+
 import Sidebar from '../Components/Sidebar'
 import axios from "axios"
 
@@ -10,6 +10,7 @@ import {
    
     useParams
   } from "react-router-dom";
+import RestaurantDataDisplay from '../Components/ResaurantDataDisplay'
 // import Products from '../Components/Products'
 const Products =lazy(()=>import ('../Components/Products'))
 
@@ -38,9 +39,15 @@ export const RestuarantDescription = () => {
         <>
           <Sidebar isOpen= {isOpen} toggle={toggle}/>
           <Navbar toggle={toggle} />  
+<<<<<<< HEAD
           <Suspense fallback={<div>Loading...</div>}> 
           <InfoSection  {...homeObjRestuarantDemo  } />
           
+=======
+         
+          <Suspense fallback={<div>Loading...</div>}> 
+          <RestaurantDataDisplay res={restot} ></RestaurantDataDisplay>
+>>>>>>> 04e3075e217a0172b2956849cd6422d854ba71af
                  <Products heading= 'Menu' res={restot}  id={id}></Products>
           </Suspense>
         <Footer></Footer>
