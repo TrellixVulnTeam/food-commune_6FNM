@@ -38,7 +38,7 @@ export const RestuarantDescription = () => {
     return (
         <>
           <Sidebar isOpen= {isOpen} toggle={toggle}/>
-         <Navbar toggle={toggle} /> 
+          <Navbar toggle={toggle} /> 
           <Suspense fallback={<div>Loading...</div>}> 
           <RestaurantDataDisplay res={restot} ></RestaurantDataDisplay>
                  <Products heading= 'Menu' res={restot}  id={id}></Products>
