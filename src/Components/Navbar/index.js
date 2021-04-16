@@ -59,11 +59,6 @@ export default class Navbar extends Component {
         this.toggle= this.toggle;
 
     }
-    state={};
-  
-    componentDidMount(){
-           
-    }
 
     render() {
         
@@ -100,13 +95,13 @@ const NavBarSignIn= ({toggle})=>{
                             <NavLinks to="/list">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
-                            <NavLinks to="community"> Community</NavLinks>
+                            <NavLinks to="/cart"> Cart</NavLinks>
                         </NavItem>
                        
                     </NavMenu>
                              
                   <NavBtn>
-                      <NavBtnLink to= "/" onClick={localStorage.clear()} >Sign out</NavBtnLink>
+                      <NavBtnLink to= "/" onClick={localStorage.clear()}>Sign out</NavBtnLink>
                   </NavBtn>
 
 

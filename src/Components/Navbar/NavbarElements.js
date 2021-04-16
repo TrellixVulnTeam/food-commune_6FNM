@@ -1,6 +1,7 @@
 import styled from 'styled-components'
-import {Link as LinkR, NavLink} from 'react-router-dom'
-import {Link as LinkScroll} from 'react-scroll'
+import {Link} from 'react-router-dom'
+import {LinkS as LinkScroll} from 'react-scroll'
+
 
 export const Nav = styled.nav`
 background: #000;
@@ -30,7 +31,7 @@ padding: 0 24px;
 max-width:1100px;
 `;
 
-export const NavLogo = styled(LinkR)`
+export const NavLogo = styled(Link)`
 color:#fff;
 justify-self:flex-start;
 cursor:pointer;
@@ -76,7 +77,7 @@ height:80px;
 margin-top:60px;
 `;
 
-export const NavLinks =styled(LinkR)`
+export const NavLinks =styled(Link)`
 color:#fff;
 display:flex;
 align-items:center;
@@ -102,7 +103,7 @@ align-items:center;
 
 `
 
-export const NavBtnLink =styled(LinkR)`
+export const NavBtnLink =styled(Link)`
 border-radius:50px;
 background: #01bf71;
 white-space:nowrap;
@@ -122,3 +123,17 @@ text-decoration:none;
 
 }
 `
+export const SignOutNavLink= styled(Link)`
+border-radius:50px;
+background: #01bf71;
+white-space:nowrap;
+padding:10px 22px;
+color: #010606;
+font-size:16px;
+outline:none;
+border:none;
+cursor: pointer;
+transition:all 0.2s ease-in-out;
+text-decoration:none;
+`
+
