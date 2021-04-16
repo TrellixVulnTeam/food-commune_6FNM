@@ -70,9 +70,29 @@ border:1px solid white;
 margin:1rem;
 width:100%;
 max-width:12rem;
+max-height:10rem;
 
 
 `;
+
+export const ItemName= styled.h5`
+
+padding:0.5rem;
+width:auto;
+display:flex;
+align-items:center;
+min-width: 12rem;
+
+@media screen and (max-width: 768px){
+    font-size:24px;
+}
+
+@media screen and (max-width: 480px){
+    font-size:16px;
+}
+
+`
+
 export const ItemQuantity =styled.div`
 border:1px solid black;
 margin:1rem;
@@ -163,3 +183,31 @@ justify-content:center;
 
 `;
 
+
+export const QuantityButtonPlus= styled.button`
+width:1rem;
+height:1rem;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:1rem;
+`
+export const QuantityButtonMinus= styled.button`
+width:1rem;
+height:1rem;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:1rem;
+
+`
+export const QuantityInput= styled.input`
+width:1rem;
+height:1rem;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:1rem;
+margin-left:0.5rem;
+margin-right:0.5rem;
+`

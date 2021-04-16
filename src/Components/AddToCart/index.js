@@ -1,60 +1,54 @@
-<<<<<<< HEAD
-import React, { useState ,useEffect,lazy,Suspense} from 'react'
+import React,{useState, useEffect} from 'react'
 import product1 from '../../Images/tacos.jpg'
-import {CartContainer,CartProductHolder,CartItemDesc,CartItemPrice,CheckOutButton,CHeader,CartTotal,CartDiscount,ItemPrice,ItemQuantity,ItemImage,CartProduct,CartTotalContainer, Headings} from './CartElements'
-import {Button} from '../ButtonElement';
-const menu=(JSON.parse(localStorage.getItem('cart')));
-
-const Cart = () => {
- 
-=======
-import React,{useState} from 'react'
-import product1 from '../../Images/tacos.jpg'
-import {CartContainer,CartProductHolder,CartItemDesc,CartItemPrice,CheckOutButton,CHeader,CartTotal,CartDiscount,ItemPrice,ItemQuantity,ItemImage,CartProduct,CartTotalContainer, Headings} from './CartElements'
+import {CartContainer,CartProductHolder,CartItemDesc,CartItemPrice,CheckOutButton,CHeader,CartTotal,CartDiscount,ItemPrice,ItemQuantity,ItemImage,CartProduct,CartTotalContainer, Headings, ItemName, QuantityButtonPlus, QuantityButtonMinus, QuantityInput} from './CartElements'
 import {Button} from '../ButtonElement';
 import { loadStripe } from '@stripe/stripe-js';
 // Make sure to call `loadStripe` outside of a component’s render to avoid
 // recreating the `Stripe` object on every render.
-const stripePromise = loadStripe('pk_test_51IgvT7FowvHTDhySXUnSDxMbioQabiBtBQLQvo0aRpC05CCLWeKHJYZVWVcjdNdPIz7RSGFLtx428MP92Q0GIcD400tcUt3svE');
+// const stripePromise = loadStripe('pk_test_51IgvT7FowvHTDhySXUnSDxMbioQabiBtBQLQvo0aRpC05CCLWeKHJYZVWVcjdNdPIz7RSGFLtx428MP92Q0GIcD400tcUt3svE');
 
-const Cart = (props) => {
+const menu= JSON.parse(localStorage.getItem('cart'));
+const Cart = () => {
 
-    console.log((localStorage.getItem('cart')));
+        useEffect(()=>{
+        console.log(menu);
+
+    },[]);
+
     
-
->>>>>>> bee2ad6487a78325cb1780e33e614924ab757213
     return (    
        <CartContainer>
            <CHeader>Shopping Cart</CHeader>
-           <CartProductHolder>
+        <CartProductHolder>
+           
+            { menu && menu.map((item)=>(
+                <>
+                <CartProduct>
+                <ItemName>{item.item_name}</ItemName>
+                <ItemImage src= {product1}></ItemImage>
+                <ItemQuantity>
+                <QuantityButtonMinus>-</QuantityButtonMinus> 
+                    <QuantityInput></QuantityInput>
+                <QuantityButtonPlus>+</QuantityButtonPlus>
+                   
+                </ItemQuantity>
+                <ItemPrice>{item.price}</ItemPrice>
+            </CartProduct>
+                </>
+            ))
+               
+        }   
+           
+        </CartProductHolder>
+           
+           {/* <CartProductHolder>
                <Headings>Products</Headings>
-<<<<<<< HEAD
-               <Suspense fallback={<h1>Loading posts...</h1>}>
-        <ProfileTimeline />
-      </Suspense>
-           
-=======
-           
-        {/* {cart.map((product)=> {
-
-                return(
-                    <CartProduct>
-                    <ItemImage src= {product1}></ItemImage>
-                    <ItemQuantity></ItemQuantity>
-                    <ItemPrice>$5.99</ItemPrice>
-                </CartProduct>
-
-                )
-
-        })
-        } */}
 
             <CartProduct>
                 <ItemImage src= {product1}></ItemImage>
                 <ItemQuantity></ItemQuantity>
                 <ItemPrice>$5.99</ItemPrice>
             </CartProduct>
->>>>>>> bee2ad6487a78325cb1780e33e614924ab757213
             <CartProduct>
                 <ItemImage src= {product1}></ItemImage>
                 <ItemQuantity></ItemQuantity>
@@ -76,20 +70,10 @@ const Cart = (props) => {
             <CartItemPrice>$10.99</CartItemPrice>
             </CartTotal>
             <CheckOutButton to ="/">Pay Now- inactive now</CheckOutButton>
-           </CartTotalContainer>
+           </CartTotalContainer> */}
        </CartContainer>
     )
 }
-const ProfileTimeline=()=> {
-    // Try to read posts, although they might not have loaded yet
-    const [menu,setmenu]=useState([]);
-    useEffect(()=>{
-       },[]);
-    return (<>
-        { menu && menu.map((item)=>{ <b>{item.item_name}</b>})
-           
-           }    </>
-    );
-  }
+
 
 export default Cart
