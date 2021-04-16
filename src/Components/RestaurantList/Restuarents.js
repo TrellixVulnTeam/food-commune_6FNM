@@ -1,12 +1,14 @@
 import React from 'react'
 import image from './Asserts/pizza.jpg'
+import './rList.css';
+// import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 const Restuarents = (props) => {
   return (
-    <div className="col-md-3">
+    <div className="col-md-4">
 
     <div className="restaurents text-center">
     <div className="overflow">
-        <img src={`data:image/png;base64,${props.Resto.res_img}`} alt="image" className="card-img-top"/>
+        <img src={`data:image/png;base64,${props.Resto.res_img}`}  alt="image" className="card-img-top"/>
     </div>
     <div className="card-body text-dark">
         <h4 classname="card-title">{props.Resto.res_name} </h4>
@@ -17,6 +19,7 @@ const Restuarents = (props) => {
     </div>
 </div>
 </div>
+
 
   )
 }

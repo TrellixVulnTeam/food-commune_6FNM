@@ -1,4 +1,5 @@
-import React, { useState,useContext } from "react";
+import React, { useState ,useEffect,lazy,Suspense,useContext} from 'react'
+
 import {
   BoldLink,
   BoxContainer,
@@ -37,14 +38,10 @@ export function LoginForm(props) {
      {
       api.post('/login',{userName:email,password:password}).then(res=>{
         console.log(res.data);
-         if(res.data.data!=null)
+         if(res.data.token!=null)
          {
-          //console.log(res.data.token);
-         
           localStorage.setItem('token',res.data.token);
 
-         // alert("Login sucessfully");
-          // window.location.href = "http://localhost:3001/";
           history.push('/');
           
          }
