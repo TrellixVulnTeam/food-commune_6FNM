@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import {ProductsContainer,ProductsHeading,ProductWrapper,ProductCard,ProductImg,ProductInfo,
-ProductTitle,ProductDesc,ProductPrice,ProductButton} from './ProductElements';
+ProductTitle,ProductDesc,ProductPrice,ProductButton, PaymentLink} from './ProductElements';
 import product3 from '../../Images/tacos.jpg'
 
 import axios from 'axios'
@@ -34,7 +34,7 @@ const Products = ({heading,res,id}) => {
             localStorage.setItem("cart", JSON.stringify(cart));
             console.log(JSON.parse(localStorage.getItem('cart')));
 
-
+            
          }
      }
        return (
@@ -55,6 +55,7 @@ const Products = ({heading,res,id}) => {
                    )
                })}
            </ProductWrapper>
+           <ProductButton><PaymentLink res={cart} to="/cart">Payment</PaymentLink></ProductButton>
        </ProductsContainer>
     )
 }

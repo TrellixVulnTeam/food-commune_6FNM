@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {Link, Link as LinkR} from 'react-router-dom'
 
 export const ProductsContainer=styled.div`
 width:100vw;
@@ -6,6 +7,9 @@ min-height:100vh;
 padding: 5rem calc((100vw-1300px)/2);
 background:#fff;
 color:black;
+display:flex;
+align-items:center;
+flex-direction:column;
 
 `
 
@@ -75,4 +79,25 @@ color: wheat;
 transition: 0.2s ease-in-out;
 border-radius:8px;
 
+`
+
+export const PaymentLink = styled(Link)`
+color:#fff;
+display:flex;
+align-items:center;
+text-decoration:none;
+padding: 0 1rem;
+height: 100% auto;
+cursor: pointer;
+color: white;
+
+
+&:active {
+    border-bottom: 3px solid black;
+
+}
+
+&:hover{
+    color:yellow;
+}
 `
