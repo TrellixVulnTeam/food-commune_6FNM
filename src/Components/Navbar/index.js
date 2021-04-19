@@ -59,14 +59,11 @@ export default class Navbar extends Component {
         this.toggle= this.toggle;
         // alert(localStorage.getItem('token'));
     }
-<<<<<<< HEAD
     state={};
   
     componentDidMount(){
     //alert(localStorage.getItem('token'));
     }
-=======
->>>>>>> bee2ad6487a78325cb1780e33e614924ab757213
 
     render() {
         
@@ -104,11 +101,7 @@ const NavBarSignIn= ({toggle})=>{
                             <NavLinks to="/list">Restaurants </NavLinks>
                         </NavItem>
                         <NavItem>
-<<<<<<< HEAD
                             <NavLinks to="/community"> Community</NavLinks>
-=======
-                            <NavLinks to="/cart"> Cart</NavLinks>
->>>>>>> bee2ad6487a78325cb1780e33e614924ab757213
                         </NavItem>
                         <NavItem>
                             <NavLinks to="/cart">
@@ -120,11 +113,7 @@ const NavBarSignIn= ({toggle})=>{
                     </NavMenu>
                              
                   <NavBtn>
-<<<<<<< HEAD
                       <NavBtnLink  >Sign out</NavBtnLink>
-=======
-                      <NavBtnLink to= "/" onClick={localStorage.clear()}>Sign out</NavBtnLink>
->>>>>>> bee2ad6487a78325cb1780e33e614924ab757213
                   </NavBtn>
 
 
