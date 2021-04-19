@@ -190,7 +190,7 @@ height:1rem;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:1rem;
+padding:1.2rem;
 `
 export const QuantityButtonMinus= styled.button`
 width:1rem;
@@ -198,7 +198,7 @@ height:1rem;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:1rem;
+padding:1.2rem;
 
 `
 export const QuantityInput= styled.input`
