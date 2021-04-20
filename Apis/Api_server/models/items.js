@@ -23,6 +23,10 @@ var itemsSchema = new mongoose.Schema({
             type: String,
             required: true,
         },
+        quantity: {
+            type: String,
+            required: true,
+        },
     });
     mongoose.model('items', itemsSchema, 'items');
     

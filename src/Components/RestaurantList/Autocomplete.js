@@ -1,6 +1,7 @@
 import React, {useState  } from 'react'
 import "./Autcomplete.css"
 import axios from 'axios'
+import swal from 'sweetalert';
 
 const Autocomplete = (props) => {
 
@@ -34,6 +35,7 @@ const Autocomplete = (props) => {
     const handleItemClicked=(place)=> {
        
         setSearch(place.place_name)
+        localStorage.setItem('address',JSON.stringify(place));
         props.onSelect(place);
         setIsLoading(false);
         setResults([]);
