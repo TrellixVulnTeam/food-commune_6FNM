@@ -2,6 +2,7 @@ import React, { useEffect,useState } from 'react'
 import {ProductsContainer,ProductsHeading,ProductWrapper,ProductCard,ProductImg,ProductInfo,
 ProductTitle,ProductDesc,ProductPrice,ProductButton, PaymentLink} from './ProductElements';
 import product3 from '../../Images/tacos.jpg'
+import swal from 'sweetalert';
 
 import axios from 'axios'
 
@@ -11,31 +12,42 @@ const Products = ({heading,res,id}) => {
         axios.get(`http://localhost:3000/api/get_restaurant/${id}`)
        .then(response => {
         setresult(response.data);
-        //  console.log(response.data)
        })
      },[]);  
      const [cart,setcart]=useState([]);
 
      const addtocart=(product)=>
      {
-         if(JSON.parse(localStorage.getItem('cart'))=='' || localStorage.getItem('cart')==null )
+        setcart(JSON.parse(localStorage.getItem('cart')));
+
+       console.log( JSON.parse(localStorage.getItem('cart')));
+         if(localStorage.getItem('cart')==null|| JSON.parse(localStorage.getItem('cart'))=='' )
          {
-            console.log('im in');
             cart.push(product);
             localStorage.setItem("cart", JSON.stringify(cart));
-            console.log(cart);
      
          }
          else
          {
-            setcart(JSON.parse(localStorage.getItem('cart')));
-            cart.map((item)=>{item._id==product._id?alert('already in cart'):cart.push(product)});
+            var ind=JSON.parse(localStorage.getItem('cart')).findIndex((item)=>(item._id==product._id));
             
-            localStorage.setItem("cart", JSON.stringify(cart));
-            console.log(JSON.parse(localStorage.getItem('cart')));
-
-            
+            if(ind>-1)
+            {
+                swal({
+                    title: "Alredy in cart",
+                    icon: "warning",
+                 
+                  });
+            }
+            else{
+                cart.push(product);
+                localStorage.setItem("cart", JSON.stringify(cart));
+                swal("Added to cart!", "check cart!", "success")
+            }
+   
          }
+         console.log( JSON.parse(localStorage.getItem('cart')));
+
      }
        return (
        <ProductsContainer>

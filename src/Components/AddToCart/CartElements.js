@@ -7,18 +7,17 @@ export const CartContainer =styled.div`
 display:flex;
 height:auto;
 padding:1em;
-border: 1px solid black;
 flex-direction:column;
 justify-items:space-evenly;
-background-color:black;
-color:white;
+background-color:white;
+color:black;
 align-items:center;
 margin:0;
 `
 
 
 export const CHeader =styled.h2`
-margin-top:4rem;
+margin-top:100px;
 display:flex;
 justify-content:center;
 color:whitesmoke !important;
@@ -38,7 +37,8 @@ export const Headings= styled.h4`
 align-items:center;
 display:flex;
 justify-content:center;
-color:white !important;
+color:black !important;
+
 
 
 `
@@ -57,7 +57,6 @@ box-shadow: 0  2px 0 0  #01bf71;
 `;
 
 export const CartProduct =styled.div`
-border:1px solid black;
 display:flex;
 height:auto;
 display:flex;
@@ -191,6 +190,8 @@ display:flex;
 align-items:center;
 justify-content:center;
 padding:1.2rem;
+margin-left:0.5rem;
+margin-right:0.5rem;
 `
 export const QuantityButtonMinus= styled.button`
 width:1rem;
@@ -202,12 +203,12 @@ padding:1.2rem;
 
 `
 export const QuantityInput= styled.input`
-width:1rem;
-height:1rem;
+width:50px;
+height:2.7rem;
 display:flex;
 align-items:center;
 justify-content:center;
-padding:1rem;
+padding:1rem;   
 margin-left:0.5rem;
 margin-right:0.5rem;
 `
