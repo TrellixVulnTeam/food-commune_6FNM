@@ -19,4 +19,5 @@
     "pug": "2.0.0-beta11",
     "request": "^2.88.2"
   }
+  ,"proxy": "http://localhost:3000"
 }
