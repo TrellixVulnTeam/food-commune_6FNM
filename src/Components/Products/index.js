@@ -9,7 +9,7 @@ import axios from 'axios'
 const Products = ({heading,res,id}) => {
     const [result,setresult]=useState([]);
     useEffect(()=>{
-        axios.get(`https://food-commune.herokuapp.com/api/get_restaurant/${id}`)
+        axios.get(`http://localhost:3000/api/get_restaurant/${id}`)
        .then(response => {
         setresult(response.data);
        })
