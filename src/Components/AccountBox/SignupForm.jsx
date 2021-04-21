@@ -20,7 +20,7 @@ export function SignupForm(props) {
   const [confirmpass,setConfirmpass]=useState('');
   const history= useHistory();
   const api=axios.create({
-    baseURL:'http://localhost:3000/api'
+    baseURL:'https://food-commune.herokuapp.com/api'
   })
   
 
@@ -101,7 +101,7 @@ export function SignupForm(props) {
 //       const [confirmpass,setConfirmpass]=useState('');
 //       this.state= {redirect:null}
 //       const api=axios.create({
-//         baseURL:'http://localhost:3000/api'
+//         baseURL:'https://food-commune.herokuapp.com/api'
 //       })
 
 //   }

@@ -30,7 +30,8 @@
     "web-vitals": "^1.1.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "cd apis && node bin/www",
+    "heroku-postbuild": "npm install && npm run build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -52,6 +53,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },"proxy": "http://localhost:3000"
+  },"proxy": "https://food-commune.herokuapp.com"
   
 }
