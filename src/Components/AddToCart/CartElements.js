@@ -212,3 +212,10 @@ padding:1rem;
 margin-left:0.5rem;
 margin-right:0.5rem;
 `
+
+export const recieptLink =styled(Link)`
+width:50px;
+background-color: green;
+border-radius:16px;
+
+`

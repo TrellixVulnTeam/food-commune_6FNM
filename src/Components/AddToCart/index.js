@@ -1,12 +1,70 @@
 import React, { useState ,useEffect,lazy,useRef,Suspense} from 'react'
 import product1 from '../../Images/tacos.jpg'
-import {CartContainer,CartProductHolder,CartItemDesc,CartItemPrice,CheckOutButton,QuantityInput,CHeader,CartTotal,CartDiscount,ItemPrice,ItemQuantity,ItemImage,CartProduct,CartTotalContainer,QuantityButtonPlus,QuantityButtonMinus ,Headings} from './CartElements'
+import {CartContainer,recieptLink,CartProductHolder,CartItemDesc,CartItemPrice,CheckOutButton,QuantityInput,CHeader,CartTotal,CartDiscount,ItemPrice,ItemQuantity,ItemImage,CartProduct,CartTotalContainer,QuantityButtonPlus,QuantityButtonMinus ,Headings} from './CartElements'
 import {Button} from '../ButtonElement';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from'axios';
+import {toast, ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { render } from 'react-dom';
+// import { response } from '../../../Apis/app';
 
 
 
 const Cart = () => {
+
+    toast.configure();
     const [menu,setmenu]=useState((JSON.parse(localStorage.getItem('cart'))));
+   //to show receipt if the payment successful 
+    const [receipt] =useState({
+        flag:false,
+        url:null
+    })
+    
+    const addLink = () =>{
+
+        if(receipt.url!=null|receipt.flag==true){
+               let url = new URL;
+               url=receipt.url;
+            return(
+                <>
+                <recieptLink to="url"> View receipt</recieptLink>
+                </>
+            )
+      }
+
+    }
+
+    
+    //stripe product names
+    const [product]=useState({
+        productName:"demo",
+        price:localStorage.getItem('price')*100
+    })    
+        //stripe handling
+       async function handleToken (token){
+        console.log(token);
+       await axios.post('http://localhost:3000/api/checkout',{token, product})
+       .then(
+            response => {
+                console.log(response)
+              const {status} =response.data;
+              if(status==="success"){
+                  console.log(response.data.receipt_url);
+                    toast('success! check your email for details',{type:'success'})
+                    receipt.flag=true;
+                    receipt.url=response.data.receipt_url;
+                    // window.open(response.data.receipt_url, "_blank");
+
+              }else {
+                toast('Sorry! please revise payment details',{type:'error'})
+              }
+            }
+           );
+        // const {status} =response.data;
+       }
+
+
 
     const increase_item=(id)=>{
          menu.map((item)=>{if(item._id==id){ var qty=parseInt(item.quantity)+1;
@@ -56,8 +114,9 @@ const Cart = () => {
         document.getElementById('tax').innerHTML=wotax;
         document.getElementById('total').innerHTML=ntotal;
         document.getElementById('price').innerHTML=(sum).toFixed(2);
-
-
+        localStorage.setItem('price',ntotal);
+        //console.log(localStorage.getItem('price')*100);
+    
     }
     useEffect(()=>{
      cost();
@@ -101,7 +160,16 @@ const Cart = () => {
             <CartItemDesc>Total </CartItemDesc>
             <CartItemPrice id="total">0</CartItemPrice>
             </CartTotal>
-            <CheckOutButton to ="/">Pay Now</CheckOutButton></>}
+       </>}    <StripeCheckout
+                stripeKey="pk_test_51IgvT7FowvHTDhySXUnSDxMbioQabiBtBQLQvo0aRpC05CCLWeKHJYZVWVcjdNdPIz7RSGFLtx428MP92Q0GIcD400tcUt3svE"
+                token={handleToken}
+                billingAddress
+                shippingAddress
+                amount={product.price}
+                name={product.productName}
+
+       ></StripeCheckout>
+       <ToastContainer></ToastContainer>
            </CartTotalContainer>
        </CartContainer>
     )
