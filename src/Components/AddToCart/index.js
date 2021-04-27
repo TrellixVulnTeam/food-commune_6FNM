@@ -28,7 +28,7 @@ const Cart = () => {
                url=receipt.url;
             return(
                 <>
-                <recieptLink to="url"> View receipt</recieptLink>
+                <recieptLink to="url"> View </recieptLink>
                 </>
             )
       }
